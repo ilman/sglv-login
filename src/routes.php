@@ -11,19 +11,19 @@ Route::group(
 		Route::get('login', 'AuthController@getLogin');
 		Route::post('login', 'AuthController@postLogin');
 
-		Route::get('register', 'AuthController@getRegister');
-		Route::post('register', 'AuthController@postRegister');
+		// Route::get('register', 'AuthController@getRegister');
+		// Route::post('register', 'AuthController@postRegister');
 
-		Route::get('login-facebook', 'AuthSocialController@getLoginFacebook');
-		Route::get('facebook/callback', 'AuthSocialController@getFacebookCallback');
+		// Route::get('login-facebook', 'AuthSocialController@getLoginFacebook');
+		// Route::get('facebook/callback', 'AuthSocialController@getFacebookCallback');
 		
 		Route::get('logout', 'AuthController@getLogout');
 		
-		Route::get('forgot', 'AuthController@getForgot');
-		Route::post('forgot', 'AuthController@postForgot');
+		// Route::get('forgot', 'AuthController@getForgot');
+		// Route::post('forgot', 'AuthController@postForgot');
 
-		Route::get('reset', 'AuthController@getReset');
-		Route::post('reset', 'AuthController@postReset');
+		// Route::get('reset', 'AuthController@getReset');
+		// Route::post('reset', 'AuthController@postReset');
 	}
 );
 
