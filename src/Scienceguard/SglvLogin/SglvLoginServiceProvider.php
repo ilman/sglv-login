@@ -58,6 +58,14 @@ class SglvLoginServiceProvider extends ServiceProvider {
 			'routes',
 		);
 		$this->loadIncludes($files, 'include');
+
+		// artisan command
+		// $this->app->bind('sglv-login::command.user.create', function($app) {
+		// 	return new UserCreateCommand();
+		// });
+		// $this->commands(array(
+		// 	'sglv-login::command.user.create'
+		// ));
 	}
 
 	/**
