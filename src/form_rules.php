@@ -74,4 +74,23 @@ class FormRules{
         return $validator;
     }
 
+    public static function formPassword()
+    {
+        $input = Input::all();
+
+        $rules = array(
+            // 'old_password' => 'required',
+            'new_password' => 'required',
+            'confirm_new_password' => 'required|same:new_password',
+        );
+
+        if(\Config::get('sglv_login.complex_password')){
+            $rules['new_password'] = 'required|min:5|case_diff|numbers|letters|symbols';
+        }
+
+        $validator = Validator::make($input, $rules);
+
+        return $validator;
+    }
+
 }
