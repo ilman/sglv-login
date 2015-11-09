@@ -14,6 +14,7 @@ use Notification;
 use Model\User;
 
 use Scienceguard\SG_Util;
+use Scienceguard\SglvLogin\FormRules;
 
 class AdminController extends BaseController {
 
@@ -44,9 +45,10 @@ class AdminController extends BaseController {
 
 	public function postPassword()
 	{
-		$user_id = $this->user_id;
+		$current_user = \CurrentUser::getUser();
+		$user_id = $current_user->id;
 		
-		$validator = \FormRules::formPassword();
+		$validator = FormRules::formPassword();
 		if($validator->fails()){
 			return Redirect::to('admin/password')
 			->withErrors($validator)->withInput();
